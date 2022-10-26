@@ -1,3 +1,5 @@
+SELECT emp_no, Job FROM Works_on, Project WHERE Works_on.project_no=Project.project_no AND project_name='Gemini';
+
 SELECT project_name FROM Project WHERE 2<=(SELECT COUNT(*) FROM Works_on WHERE Project.project_no=Works_on.project_no AND Job='Clerk');
 
 SELECT emp_fna, emp_lna FROM Employee WHERE emp IN (SELECT emp_no FROM Works_on JOIN Project ON Works_on.project_no=Project.project_no AND Job='Manager' AND project_name='Mercury');
